@@ -2,6 +2,6 @@
 My first theme for Obsidian called JUST FOR ME
 
 Dark:
-![Dark Theme](JUST FOR ME dark theme.png)
+![Dark Theme](screenshots\dark.png)
 Light:
-![Light Theme](JUST FOR ME light theme.png)
+![Light Theme](screenshots\light.png)
