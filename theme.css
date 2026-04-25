@@ -1,0 +1,555 @@
+/* @settings
+name: Just For Me
+id: Just For Me
+settings:
+  # ─────────────────────────────────────────
+  # 🎨 NAGŁÓWKI
+  # ─────────────────────────────────────────
+  - id: headers-heading
+    title: 🎨 Nagłówki
+    type: heading
+    level: 1
+    collapsed: true
+  - id: headers-dark-heading
+    title: Tryb Ciemny
+    type: heading
+    level: 2
+    collapsed: true
+  - id: gruvbox-custom-h1-dark
+    title: H1
+    type: variable-color
+    default: '#ff0000'
+    format: hex
+  - id: gruvbox-custom-h2-dark
+    title: H2
+    type: variable-color
+    default: '#fabd2f'
+    format: hex
+  - id: gruvbox-custom-h3-dark
+    title: H3
+    type: variable-color
+    default: '#b8bb26'
+    format: hex
+  - id: gruvbox-custom-h4-dark
+    title: H4
+    type: variable-color
+    default: '#8ec07c'
+    format: hex
+  - id: gruvbox-custom-h5-dark
+    title: H5
+    type: variable-color
+    default: '#83a598'
+    format: hex
+  - id: gruvbox-custom-h6-dark
+    title: H6
+    type: variable-color
+    default: '#d3869b'
+    format: hex
+  - id: headers-light-heading
+    title: Tryb Jasny
+    type: heading
+    level: 2
+    collapsed: true
+  - id: gruvbox-custom-h1-light
+    title: H1
+    type: variable-color
+    default: '#9d0006'
+    format: hex
+  - id: gruvbox-custom-h2-light
+    title: H2
+    type: variable-color
+    default: '#b57614'
+    format: hex
+  - id: gruvbox-custom-h3-light
+    title: H3
+    type: variable-color
+    default: '#79740e'
+    format: hex
+  - id: gruvbox-custom-h4-light
+    title: H4
+    type: variable-color
+    default: '#427b58'
+    format: hex
+  - id: gruvbox-custom-h5-light
+    title: H5
+    type: variable-color
+    default: '#076678'
+    format: hex
+  - id: gruvbox-custom-h6-light
+    title: H6
+    type: variable-color
+    default: '#8f3f71'
+    format: hex
+  # ─────────────────────────────────────────
+  # 🔤 POGRUBIENIE
+  # ─────────────────────────────────────────
+  - id: bold-heading
+    title: 🔤 Pogrubienie
+    type: heading
+    level: 1
+    collapsed: true
+  - id: gruvbox-custom-bold-dark
+    title: Kolor – Tryb Ciemny
+    type: variable-color
+    default: '#ffffff'
+    format: hex
+  - id: gruvbox-custom-bold-light
+    title: Kolor – Tryb Jasny
+    type: variable-color
+    default: '#8b0000'
+    format: hex
+  - id: gruvbox-custom-bold-size
+    title: Rozmiar tekstu
+    description: Rozmiar względem normalnego tekstu (1.0 = normalny, 1.1 = 10% większy)
+    type: variable-number-slider
+    default: 1.0
+    min: 1
+    max: 1.5
+    step: 0.05
+    format: em
+  # ─────────────────────────────────────────
+  # 📐 KURSYWA
+  # ─────────────────────────────────────────
+  - id: italic-heading
+    title: 📐 Kursywa
+    type: heading
+    level: 1
+    collapsed: true
+  - id: gruvbox-custom-italic-dark
+    title: Kolor – Tryb Ciemny
+    type: variable-color
+    default: '#ccff00'
+    format: hex
+  - id: gruvbox-custom-italic-light
+    title: Kolor – Tryb Jasny
+    type: variable-color
+    default: '#006400'
+    format: hex
+  # ─────────────────────────────────────────
+  # 🖍️ HIGHLIGHT (==tekst==)
+  # ─────────────────────────────────────────
+  - id: highlight-heading
+    title: 🖍️ Highlight (==tekst==)
+    type: heading
+    level: 1
+    collapsed: true
+  - id: gruvbox-custom-highlight-bg-dark
+    title: Tło – Tryb Ciemny
+    type: variable-color
+    default: '#d79921'
+    format: hex
+  - id: gruvbox-custom-highlight-text-dark
+    title: Kolor tekstu – Tryb Ciemny
+    type: variable-color
+    default: '#282828'
+    format: hex
+  - id: gruvbox-custom-highlight-bg-light
+    title: Tło – Tryb Jasny
+    type: variable-color
+    default: '#fabd2f'
+    format: hex
+  - id: gruvbox-custom-highlight-text-light
+    title: Kolor tekstu – Tryb Jasny
+    type: variable-color
+    default: '#282828'
+    format: hex
+  # ─────────────────────────────────────────
+  # 🔵 SELEKCJA TEKSTU
+  # ─────────────────────────────────────────
+  - id: selection-heading
+    title: 🔵 Selekcja tekstu
+    type: heading
+    level: 1
+    collapsed: true
+  - id: gruvbox-custom-selection-dark
+    title: Kolor selekcji – Tryb Ciemny
+    description: Kolor z przezroczystością (suwak alpha dostępny w pickerze)
+    type: variable-color
+    default: '#ffffff33'
+    format: hex-rgba
+  - id: gruvbox-custom-selection-light
+    title: Kolor selekcji – Tryb Jasny
+    description: Kolor z przezroczystością (suwak alpha dostępny w pickerze)
+    type: variable-color
+    default: '#ed740080'
+    format: hex-rgba
+  # ─────────────────────────────────────────
+  # ✨ AKCENTY (aktywny plik / zakładka)
+  # ─────────────────────────────────────────
+  - id: accent-heading
+    title: ✨ Akcenty (aktywny plik / zakładka)
+    type: heading
+    level: 1
+    collapsed: true
+  - id: gruvbox-custom-accent-bg-dark
+    title: Tło akcentu – Tryb Ciemny
+    description: Podświetlenie aktywnego pliku i zakładki
+    type: variable-color
+    default: '#1b7e7c40'
+    format: hex-rgba
+  - id: gruvbox-custom-accent-border-dark
+    title: Linia akcentu – Tryb Ciemny
+    description: Kolor pionowej kreski przy aktywnym pliku
+    type: variable-color
+    default: '#42ff00'
+    format: hex
+  - id: gruvbox-custom-accent-bg-light
+    title: Tło akcentu – Tryb Jasny
+    description: Podświetlenie aktywnego pliku i zakładki
+    type: variable-color
+    default: '#d28a0040'
+    format: hex-rgba
+  - id: gruvbox-custom-accent-border-light
+    title: Linia akcentu – Tryb Jasny
+    description: Kolor pionowej kreski przy aktywnym pliku
+    type: variable-color
+    default: '#d28a00'
+    format: hex
+  # ─────────────────────────────────────────
+  # 🏠 TŁO I TEKST (tylko tryb jasny)
+  # ─────────────────────────────────────────
+  - id: background-heading
+    title: 🏠 Tło i Tekst (Tryb Jasny)
+    type: heading
+    level: 1
+    collapsed: true
+  - id: gruvbox-custom-bg-primary
+    title: Tło edytora
+    description: Główne tło obszaru pisania
+    type: variable-color
+    default: '#fdf6e3'
+    format: hex
+  - id: gruvbox-custom-bg-secondary
+    title: Tło paneli bocznych
+    description: Tło eksploratora plików, pasków bocznych
+    type: variable-color
+    default: '#f5edda'
+    format: hex
+  - id: gruvbox-custom-bg-primary-alt
+    title: Tło menu i elementów unoszących się
+    type: variable-color
+    default: '#f8f1de'
+    format: hex
+  - id: gruvbox-custom-text-normal-color
+    title: Kolor tekstu głównego
+    type: variable-color
+    default: '#5c4b37'
+    format: hex
+  - id: gruvbox-custom-text-muted-color
+    title: Kolor tekstu wyszarzonego
+    type: variable-color
+    default: '#8d7a64'
+    format: hex
+  - id: gruvbox-custom-heading-base-color
+    title: Kolor nagłówków (fallback)
+    description: Używany przez motywy bazowe, zanim zadziałają kolory H1–H6
+    type: variable-color
+    default: '#433422'
+    format: hex
+*/
+
+/* =============================================
+   NAGŁÓWKI – KOLORY
+   ============================================= */
+
+.theme-dark {
+    --h1-color: var(--gruvbox-custom-h1-dark, #ff0000);
+    --h2-color: var(--gruvbox-custom-h2-dark, #fabd2f);
+    --h3-color: var(--gruvbox-custom-h3-dark, #b8bb26);
+    --h4-color: var(--gruvbox-custom-h4-dark, #8ec07c);
+    --h5-color: var(--gruvbox-custom-h5-dark, #83a598);
+    --h6-color: var(--gruvbox-custom-h6-dark, #d3869b);
+}
+
+.theme-light {
+    /* NAPRAWKA: było '#green' – nieprawidłowy hex, zmieniono na '#9d0006' */
+    --h1-color: var(--gruvbox-custom-h1-light, #9d0006);
+    --h2-color: var(--gruvbox-custom-h2-light, #b57614);
+    --h3-color: var(--gruvbox-custom-h3-light, #79740e);
+    --h4-color: var(--gruvbox-custom-h4-light, #427b58);
+    --h5-color: var(--gruvbox-custom-h5-light, #076678);
+    --h6-color: var(--gruvbox-custom-h6-light, #8f3f71);
+}
+
+/* Wymuszenie dla edytora i trybu czytania */
+:is(.theme-dark, .theme-light) .cm-header-1,
+:is(.theme-dark, .theme-light) .markdown-rendered h1 { color: var(--h1-color) !important; }
+
+:is(.theme-dark, .theme-light) .cm-header-2,
+:is(.theme-dark, .theme-light) .markdown-rendered h2 { color: var(--h2-color) !important; }
+
+:is(.theme-dark, .theme-light) .cm-header-3,
+:is(.theme-dark, .theme-light) .markdown-rendered h3 { color: var(--h3-color) !important; }
+
+:is(.theme-dark, .theme-light) .cm-header-4,
+:is(.theme-dark, .theme-light) .markdown-rendered h4 { color: var(--h4-color) !important; }
+
+:is(.theme-dark, .theme-light) .cm-header-5,
+:is(.theme-dark, .theme-light) .markdown-rendered h5 { color: var(--h5-color) !important; }
+
+:is(.theme-dark, .theme-light) .cm-header-6,
+:is(.theme-dark, .theme-light) .markdown-rendered h6 { color: var(--h6-color) !important; }
+
+
+/* =============================================
+   HIGHLIGHT (==tekst==)
+   ============================================= */
+
+.theme-light {
+    --text-highlight-bg: var(--gruvbox-custom-highlight-bg-light, #fabd2f) !important;
+}
+
+.theme-light mark,
+.theme-light .cm-highlight {
+    color: var(--gruvbox-custom-highlight-text-light, #282828) !important;
+    background-color: var(--gruvbox-custom-highlight-bg-light, #fabd2f) !important;
+}
+
+.theme-light mark strong,
+.theme-light .cm-highlight.cm-strong,
+.theme-light .cm-strong .cm-highlight {
+    color: #1d2021 !important;
+    -webkit-text-fill-color: #1d2021 !important;
+}
+
+.theme-dark mark,
+.theme-dark .cm-highlight,
+.theme-dark .cm-highlight.cm-strong {
+    background-color: var(--gruvbox-custom-highlight-bg-dark, #d79921) !important;
+    color: var(--gruvbox-custom-highlight-text-dark, #282828) !important;
+}
+
+/* Linki wewnątrz highlightu */
+.cm-highlight .cm-link,
+.markdown-rendered mark a {
+    color: #9d0006 !important;
+    text-decoration: underline !important;
+}
+
+
+/* =============================================
+   KURSYWA
+   ============================================= */
+
+.theme-dark {
+    --italic-color: var(--gruvbox-custom-italic-dark, #ccff00);
+}
+
+.theme-light {
+    --italic-color: var(--gruvbox-custom-italic-light, #006400);
+}
+
+em,
+.cm-em {
+    color: var(--italic-color) !important;
+    font-style: italic;
+}
+
+
+/* =============================================
+   POGRUBIENIE
+   ============================================= */
+
+.theme-dark {
+    --bold-color: var(--gruvbox-custom-bold-dark, #ffffff);
+}
+
+.theme-light {
+    --bold-color: var(--gruvbox-custom-bold-light, #8b0000);
+}
+
+strong,
+.cm-strong {
+    color: var(--bold-color) !important;
+    font-weight: 900 !important;
+    font-size: var(--gruvbox-custom-bold-size, 1.0em);
+}
+
+
+/* =============================================
+   SELEKCJA TEKSTU
+   ============================================= */
+
+.theme-dark {
+    --selection-color: var(--gruvbox-custom-selection-dark, #ffffff33);
+}
+
+.theme-light {
+    --selection-color: var(--gruvbox-custom-selection-light, #ed740080);
+}
+
+::selection {
+    background-color: var(--selection-color) !important;
+}
+
+.cm-selectionBackground,
+.cm-content ::selection {
+    background-color: var(--selection-color) !important;
+}
+
+
+/* =============================================
+   AKCENTY (aktywny plik / zakładka)
+   ============================================= */
+
+.theme-dark {
+    --active-bg:     var(--gruvbox-custom-accent-bg-dark,     #1b7e7c40); /* AKCENT TŁO CIEMNY */
+    --active-border: var(--gruvbox-custom-accent-border-dark, #42ff00); /* AKCENT PASEK */
+}
+
+.theme-light {
+    --active-bg:     var(--gruvbox-custom-accent-bg-light,     #2bcbfb40);
+    --active-border: var(--gruvbox-custom-accent-border-light, #2bcbfb);
+}
+
+/* Aktywny plik w eksploratorze */
+.nav-file-title.is-active {
+    background-color: var(--active-bg) !important;
+    border-left: 3px solid var(--active-border);
+}
+
+/* Aktywna zakładka górna */
+.workspace-tab-header.is-active {
+    background-color: var(--active-bg) !important;
+    border-bottom: 2px solid var(--active-border) !important;
+    border-radius: 6px 6px 0 0;
+    margin-right: 2px;
+    padding: 0 !important;
+}
+
+.workspace-tab-header.is-active::before,
+.workspace-tab-header.is-active::after {
+    display: none !important;
+}
+
+.workspace-tab-header.is-active .workspace-tab-header-inner {
+    background-color: transparent !important;
+    padding: 0 8px !important;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* Aktywny element w drzewku */
+.vertical-tabs-active,
+.tree-item-self.is-active {
+    background-color: var(--active-bg) !important;
+}
+
+
+/* =============================================
+   TŁO I TEKST – TRYB JASNY
+   ============================================= */
+
+.theme-light {
+    --background-primary:     var(--gruvbox-custom-bg-primary,        #fdf6e3);
+    --background-secondary:   var(--gruvbox-custom-bg-secondary,      #f5edda);
+    --background-primary-alt: var(--gruvbox-custom-bg-primary-alt,    #f8f1de);
+    --text-normal:            var(--gruvbox-custom-text-normal-color,  #5c4b37);
+    --text-muted:             var(--gruvbox-custom-text-muted-color,   #8d7a64);
+    --heading-color:          var(--gruvbox-custom-heading-base-color, #433422);
+    --divider-color:          rgba(0, 0, 0, 0.05);
+}
+
+/* Tło edytora */
+.markdown-source-view.mod-cm6 .cm-scroller {
+    background-color: var(--background-primary) !important;
+}
+
+/* Tło paneli bocznych */
+.workspace-split.mod-left-split,
+.workspace-split.mod-right-split,
+.nav-header,
+.nav-files-container {
+    background-color: var(--background-secondary) !important;
+}
+
+
+/* =============================================
+   ZAKŁADKI GÓRNE – TRYB JASNY
+   ============================================= */
+
+.theme-light .workspace-tab-header-container,
+.theme-light .workspace-tabs {
+    background-color: var(--background-secondary) !important; /* tło paska górnego */
+}
+
+.theme-light .workspace-tab-header {
+    /* NAPRAWKA: było puste 'background-color:  !important' – dodano wartość */
+    background-color:  !important; /* WYCIĄŁEM var(--background-secondary) by górny tab miał tło tak jak boczne */
+    color: var(--text-normal) !important; /* kolor tekstu tabów na górze */
+    border-radius: 6px 6px 0 0;
+    margin-right: 2px;
+}
+
+.theme-light .workspace-tab-header-name {
+    color: var(--text-normal) !important;
+}
+
+.theme-light .workspace-tab-header.is-active .workspace-tab-header-name {
+    color: var(--text-normal) !important;
+}
+
+.theme-light .view-header {
+    background-color: var(--background-secondary) !important; /* tło paska adresu pliku nad edytorem */
+}
+
+.theme-light .view-header-title,
+
+.theme-light .view-header-breadcrumb,
+.theme-light .view-header .workspace-tab-header-name {
+    color: var(--text-normal) !important; /* kolor tekstu paska adresu */
+}
+
+.theme-light .workspace-tab-header .svg-icon {
+    color: var(--text-muted) !important; /* kolor ikon górnego paska */
+}
+
+/* Wyłączenie koloru tła breadcrumbs w trybie ciemnym */
+.view-header {
+    background-color: transparent !important;
+}
+
+
+/* =============================================
+   TITLEBAR – NAPRAWA KOLORU PRZY AKTYWNYM OKNIE
+   Obsidian używa dwóch oddzielnych zmiennych:
+   --titlebar-background          → okno nieaktywne (działało już wcześniej)
+   --titlebar-background-focused  → okno aktywne   (tego brakowało!)
+   ============================================= */
+ 
+.theme-light {
+    --titlebar-background:         #f5edda;
+    --titlebar-background-focused: #f5edda;
+}
+ 
+.theme-dark {
+    --titlebar-background:         #282828;
+    --titlebar-background-focused: #282828;
+}
+
+
+
+
+
+/* Zmiana czcionki nagłówków na bezszeryfową(przeniosłem do snippetu) */
+/*.cm-header, 
+.markdown-rendered h1, 
+.markdown-rendered h2, 
+.markdown-rendered h3, 
+.markdown-rendered h4, 
+.markdown-rendered h5, 
+.markdown-rendered h6 {
+    font-family: "calibri", sans-serif !important;
+}
+
+*/
+
+
+
+
+
+
+
+
+
